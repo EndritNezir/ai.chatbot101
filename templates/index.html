@@ -43,14 +43,14 @@
         </h1>
 
         <p class="hero-text">
-          A sleek AI chatbot solution for portfolios, agencies, business websites, ecommerce stores,
+          A sleek AI chatbot solution for portfolios, small businesses, agencies, ecommerce stores,
           and service brands. Built with Python, JavaScript, Flask, and OpenAI API — with a clean
           interface, smart replies, and a polished web experience.
         </p>
 
         <div class="hero-actions">
           <a href="#demo" class="btn btn-primary">Launch Live Demo</a>
-          <a href="#pricing" class="btn btn-secondary">See Free Plan</a>
+          <a href="#pricing" class="btn btn-secondary">See Pricing</a>
         </div>
 
         <div class="hero-proof">
@@ -186,42 +186,189 @@
     <section id="pricing" class="section">
       <div class="section-head">
         <span class="section-tag">PRICING</span>
-        <h2>Start free</h2>
-        <p>A clean way to present this as accessible while still looking premium and valuable.</p>
+        <h2>Start free, then scale with custom chatbot setup</h2>
+        <p>
+          A junior-friendly pricing structure for portfolios, small businesses, agencies,
+          ecommerce stores, and service websites.
+        </p>
       </div>
 
-      <div class="pricing-grid">
+      <div class="pricing-grid upgraded-pricing-grid">
         <div class="glass-card pricing-card featured-pricing">
-          <div class="pricing-badge">MOST ATTRACTIVE</div>
+          <div class="pricing-badge">BEST FOR DEMO</div>
           <h3>Free Demo Plan</h3>
           <div class="price-line">
             <span class="price">€0</span>
             <span class="price-note">for demo use</span>
           </div>
+
+          <p class="pricing-intro">
+            Ideal for showing the chatbot live on a portfolio or testing the experience before requesting a custom version.
+          </p>
+
           <ul class="pricing-list">
             <li>Live website chatbot demo</li>
-            <li>Modern interface</li>
-            <li>Basic context memory</li>
-            <li>Frontend + backend setup</li>
-            <li>Customisable website section</li>
+            <li>Modern premium UI</li>
+            <li>Basic conversation memory</li>
+            <li>Frontend + backend example</li>
+            <li>Portfolio-ready presentation</li>
           </ul>
+
           <a href="#demo" class="btn btn-primary full-width">Try It Now</a>
         </div>
 
-        <div class="glass-card pricing-card">
-          <h3>Custom Website Version</h3>
-          <div class="price-line">
-            <span class="price custom-text">Custom</span>
-            <span class="price-note">tailored setup</span>
+        <div class="glass-card pricing-card quote-builder-card">
+          <div class="quote-topline">
+            <span class="quote-badge">CUSTOM QUOTE</span>
+            <h3>Build your chatbot package</h3>
+            <p>
+              Choose your website needs below and get an instant estimated price.
+              The pricing is intentionally kept at a junior-friendly level.
+            </p>
           </div>
-          <ul class="pricing-list">
-            <li>Brand-matched chatbot UI</li>
-            <li>Custom sections and prompts</li>
-            <li>Business-specific responses</li>
-            <li>Website integration support</li>
-            <li>Portfolio-ready presentation</li>
-          </ul>
-          <a href="#demo" class="btn btn-secondary full-width">View Demo First</a>
+
+          <div class="quote-form-grid">
+            <div class="field-group">
+              <label for="websiteType">Website type</label>
+              <select id="websiteType">
+                <option value="0">Portfolio / Personal site</option>
+                <option value="30">Business / Agency website</option>
+                <option value="50">Ecommerce store</option>
+                <option value="40">Booking / Service website</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="pagesCount">Website size</label>
+              <select id="pagesCount">
+                <option value="0">1–3 pages</option>
+                <option value="25">4–8 pages</option>
+                <option value="45">9+ pages</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="faqCount">Knowledge / FAQ size</label>
+              <select id="faqCount">
+                <option value="0">Basic (up to 10 FAQs)</option>
+                <option value="20">Medium (10–25 FAQs)</option>
+                <option value="40">Advanced (25+ FAQs)</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="designLevel">Chatbot design level</label>
+              <select id="designLevel">
+                <option value="0">Standard branding</option>
+                <option value="25">Premium styling</option>
+                <option value="50">Highly customised UI</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="checkbox-grid">
+            <label class="check-item">
+              <input type="checkbox" class="quote-addon" value="20" data-label="Lead capture form">
+              <span>Lead capture form</span>
+            </label>
+
+            <label class="check-item">
+              <input type="checkbox" class="quote-addon" value="25" data-label="Multi-language support">
+              <span>Multi-language support</span>
+            </label>
+
+            <label class="check-item">
+              <input type="checkbox" class="quote-addon" value="35" data-label="Product/service recommendations">
+              <span>Product / service recommendations</span>
+            </label>
+
+            <label class="check-item">
+              <input type="checkbox" class="quote-addon" value="30" data-label="Contact form integration">
+              <span>Contact form integration</span>
+            </label>
+
+            <label class="check-item">
+              <input type="checkbox" class="quote-addon" value="50" data-label="Booking or enquiry workflow">
+              <span>Booking / enquiry workflow</span>
+            </label>
+
+            <label class="check-item">
+              <input type="checkbox" class="quote-addon" value="40" data-label="Priority delivery">
+              <span>Priority delivery</span>
+            </label>
+          </div>
+
+          <div class="quote-notes field-group">
+            <label for="projectNotes">Project notes</label>
+            <textarea
+              id="projectNotes"
+              rows="4"
+              placeholder="Example: I need a chatbot for a dental clinic website with pricing questions, booking help, and bilingual support."
+            ></textarea>
+          </div>
+
+          <div class="quote-result-panel">
+            <div class="quote-result-row">
+              <span>Estimated junior-friendly project price</span>
+              <strong id="estimatedPrice">€120</strong>
+            </div>
+
+            <div class="quote-result-row small-row">
+              <span>Recommended package</span>
+              <strong id="recommendedPackage">Starter Custom</strong>
+            </div>
+
+            <p id="quoteSummary" class="quote-summary-text">
+              Great for a simple website chatbot with clean design and basic setup.
+            </p>
+          </div>
+
+          <div class="quote-actions">
+            <button id="calculateQuoteBtn" class="btn btn-primary" type="button">
+              Update Estimate
+            </button>
+
+            <button id="sendQuoteBtn" class="btn btn-secondary" type="button">
+              Send Request
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quote-process" class="section">
+      <div class="section-head">
+        <span class="section-tag">HOW CUSTOM SETUP WORKS</span>
+        <h2>A more professional service flow</h2>
+        <p>
+          This makes the website feel more serious and shows clients that the work is structured,
+          not random.
+        </p>
+      </div>
+
+      <div class="feature-panels">
+        <div class="feature-panel glass-card">
+          <h3>1. Requirement collection</h3>
+          <p>
+            The client chooses the type of website, features, chatbot styling level,
+            and any special needs for their business.
+          </p>
+        </div>
+
+        <div class="feature-panel glass-card">
+          <h3>2. Price estimation</h3>
+          <p>
+            A junior-level estimate is shown instantly so the client understands the budget range
+            before moving forward.
+          </p>
+        </div>
+
+        <div class="feature-panel glass-card">
+          <h3>3. Custom implementation</h3>
+          <p>
+            The chatbot can then be tailored for support, lead generation, bookings,
+            ecommerce help, or business-specific questions.
+          </p>
         </div>
       </div>
     </section>
