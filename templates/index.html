@@ -34,7 +34,6 @@
         <a href="#showcase">Showcase</a>
         <a href="#process">Process</a>
         <a href="#pricing">Pricing</a>
-        <a href="#demo">Demo</a>
         <a href="#faq">FAQ</a>
       </nav>
 
@@ -66,8 +65,8 @@
           </p>
 
           <div class="hero-actions">
-            <a href="#demo" class="btn btn-primary">Launch Live Demo</a>
-            <a href="#pricing" class="btn btn-secondary">View Pricing</a>
+            <a href="#pricing" class="btn btn-primary">View Pricing</a>
+            <button class="btn btn-secondary" id="openChatFromHero" type="button">Open Live Assistant</button>
           </div>
 
           <div class="hero-info-grid">
@@ -105,9 +104,7 @@
                   <div class="line sm"></div>
                 </div>
                 <div class="sidebar-module">
-                  <div class="dots-row">
-                    <span></span><span></span><span></span>
-                  </div>
+                  <div class="dots-row"><span></span><span></span><span></span></div>
                   <div class="line md"></div>
                   <div class="line sm"></div>
                 </div>
@@ -251,9 +248,7 @@
           <article class="showcase-card">
             <div class="showcase-visual showcase-blue">
               <div class="mock-app-window">
-                <div class="mock-window-bar">
-                  <span></span><span></span><span></span>
-                </div>
+                <div class="mock-window-bar"><span></span><span></span><span></span></div>
                 <div class="mock-window-title"></div>
                 <div class="mock-window-line"></div>
                 <div class="mock-window-line short"></div>
@@ -272,9 +267,7 @@
           <article class="showcase-card">
             <div class="showcase-visual showcase-green">
               <div class="mock-app-window">
-                <div class="mock-window-bar">
-                  <span></span><span></span><span></span>
-                </div>
+                <div class="mock-window-bar"><span></span><span></span><span></span></div>
                 <div class="mock-window-title"></div>
                 <div class="mock-window-line"></div>
                 <div class="mock-window-line short"></div>
@@ -293,9 +286,7 @@
           <article class="showcase-card">
             <div class="showcase-visual showcase-violet">
               <div class="mock-app-window">
-                <div class="mock-window-bar">
-                  <span></span><span></span><span></span>
-                </div>
+                <div class="mock-window-bar"><span></span><span></span><span></span></div>
                 <div class="mock-window-title"></div>
                 <div class="mock-window-line"></div>
                 <div class="mock-window-line short"></div>
@@ -426,7 +417,7 @@
               <li>Professional presentation</li>
             </ul>
 
-            <a href="#demo" class="btn btn-primary full-width-btn">Open Demo</a>
+            <button class="btn btn-primary full-width-btn" id="openChatFromPricing" type="button">Open Demo</button>
           </div>
 
           <div class="quote-builder-card">
@@ -543,45 +534,6 @@
       </div>
     </section>
 
-    <section id="demo" class="content-section">
-      <div class="container">
-        <div class="section-heading center-heading">
-          <span class="section-tag">Live Demo</span>
-          <h2>Try the chatbot</h2>
-          <p>
-            Ask about pricing, setup, services, or how the chatbot could work on a website.
-          </p>
-        </div>
-
-        <div class="live-chat-shell">
-          <div class="live-chat-card">
-            <div class="live-chat-top">
-              <div class="live-chat-title">
-                <div class="live-avatar">AI</div>
-                <div>
-                  <h3>Website Assistant</h3>
-                  <p>Demo active</p>
-                </div>
-              </div>
-
-              <button id="resetBtn" class="reset-button">Reset</button>
-            </div>
-
-            <div id="chatBox" class="live-chat-messages">
-              <div class="message bot">
-                Hello. I’m a demo website chatbot. Ask me about services, pricing, features, or website integration.
-              </div>
-            </div>
-
-            <div class="live-chat-input-row">
-              <input type="text" id="userInput" placeholder="Type your message..." />
-              <button id="sendBtn">Send</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="faq" class="content-section">
       <div class="container">
         <div class="section-heading">
@@ -632,10 +584,54 @@
       <div class="footer-links">
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
-        <a href="#demo">Demo</a>
+        <a href="#faq">FAQ</a>
       </div>
     </div>
   </footer>
+
+  <!-- Floating Widget Button -->
+  <button id="floatingChatBtn" class="floating-chat-btn" type="button" aria-label="Open chat">
+    <span class="floating-chat-icon">✦</span>
+    <span class="floating-chat-text">Ask AI</span>
+  </button>
+
+  <!-- Floating Chat Panel -->
+  <div id="floatingChatPanel" class="floating-chat-panel">
+    <div class="floating-panel-topbar">
+      <div class="traffic-lights">
+        <span class="red"></span>
+        <span class="yellow"></span>
+        <span class="green"></span>
+      </div>
+      <div class="floating-panel-title">Live Website Assistant</div>
+      <button id="closeFloatingChat" class="close-floating-chat" type="button">×</button>
+    </div>
+
+    <div class="floating-panel-inner">
+      <div class="live-chat-top floating-live-chat-top">
+        <div class="live-chat-title">
+          <div class="live-avatar">AI</div>
+          <div>
+            <h3>Website Assistant</h3>
+            <p>Demo active</p>
+          </div>
+        </div>
+
+        <button id="resetBtn" class="reset-button">Reset</button>
+      </div>
+
+      <div id="chatBox" class="live-chat-messages floating-messages">
+        <div class="message bot">
+          Hello. I’m a demo website chatbot. Ask me about services, pricing, features, or website integration.
+        </div>
+      </div>
+
+      <div class="live-chat-input-row floating-input-row">
+        <input type="text" id="userInput" placeholder="Type your message..." />
+        <button id="sendBtn">Send</button>
+      </div>
+    </div>
+  </div>
 
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>

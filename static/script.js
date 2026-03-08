@@ -3,6 +3,45 @@ const userInput = document.getElementById("userInput");
 const sendBtn = document.getElementById("sendBtn");
 const resetBtn = document.getElementById("resetBtn");
 
+const floatingChatBtn = document.getElementById("floatingChatBtn");
+const floatingChatPanel = document.getElementById("floatingChatPanel");
+const closeFloatingChat = document.getElementById("closeFloatingChat");
+const openChatFromHero = document.getElementById("openChatFromHero");
+const openChatFromPricing = document.getElementById("openChatFromPricing");
+
+function openChatPanel() {
+  floatingChatPanel.classList.add("open");
+  setTimeout(() => {
+    if (userInput) userInput.focus();
+  }, 120);
+}
+
+function closeChatPanel() {
+  floatingChatPanel.classList.remove("open");
+}
+
+if (floatingChatBtn) {
+  floatingChatBtn.addEventListener("click", openChatPanel);
+}
+
+if (closeFloatingChat) {
+  closeFloatingChat.addEventListener("click", closeChatPanel);
+}
+
+if (openChatFromHero) {
+  openChatFromHero.addEventListener("click", openChatPanel);
+}
+
+if (openChatFromPricing) {
+  openChatFromPricing.addEventListener("click", openChatPanel);
+}
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    closeChatPanel();
+  }
+});
+
 function appendMessage(text, sender) {
   const msg = document.createElement("div");
   msg.classList.add("message", sender);
@@ -179,9 +218,8 @@ Please contact me with the next steps.
 `
     );
 
-    window.location.href = `mailto:endrit.neir30@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:endrit.nezir30@gmail.com?subject=${subject}&body=${body}`;
   });
 }
 
 calculateQuote();
-    
