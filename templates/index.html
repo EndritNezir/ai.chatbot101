@@ -3,435 +3,638 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free AI Chatbot for Websites | Endrit Nezir</title>
+  <title>Custom AI Chatbots for Websites | Endrit Nezir</title>
+  <meta
+    name="description"
+    content="Custom AI chatbots for websites, built with Python, Flask, JavaScript, and OpenAI API."
+  />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <div class="bg-orb orb-1"></div>
-  <div class="bg-orb orb-2"></div>
-  <div class="bg-orb orb-3"></div>
-  <div class="grid-overlay"></div>
+  <div class="site-bg">
+    <div class="bg-orb orb-one"></div>
+    <div class="bg-orb orb-two"></div>
+    <div class="bg-orb orb-three"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-vignette"></div>
+  </div>
 
-  <header class="navbar">
-    <a href="#" class="logo">Endrit<span>AI</span></a>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#" class="brand">Endrit<span>AI</span></a>
 
-    <nav class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#skills">Skills</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#demo">Demo</a>
-    </nav>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#showcase">Showcase</a>
+        <a href="#process">Process</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#demo">Demo</a>
+        <a href="#faq">FAQ</a>
+      </nav>
 
-    <a href="#demo" class="nav-cta">Try Demo</a>
+      <a href="#pricing" class="header-cta">Get Quote</a>
+    </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <div class="hero-left">
-        <div class="badge-row">
-          <span class="top-badge">FREE FOR WEBSITES</span>
-          <span class="mini-pill">AI Integration</span>
-          <span class="mini-pill">Frontend + Backend</span>
-        </div>
-
-        <h1>
-          I build <span class="gradient-text">professional AI chatbots</span>
-          for websites that look modern, answer instantly, and feel premium.
-        </h1>
-
-        <p class="hero-text">
-          A sleek AI chatbot solution for portfolios, small businesses, agencies, ecommerce stores,
-          and service brands. Built with Python, JavaScript, Flask, and OpenAI API — with a clean
-          interface, smart replies, and a polished web experience.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#demo" class="btn btn-primary">Launch Live Demo</a>
-          <a href="#pricing" class="btn btn-secondary">See Pricing</a>
-        </div>
-
-        <div class="hero-proof">
-          <div class="proof-card">
-            <strong>Free access</strong>
-            <span>Great for demos and small websites</span>
+  <main>
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow-row">
+            <span class="eyebrow-pill">Premium AI chatbots</span>
+            <span class="eyebrow-muted">Custom website integration</span>
+            <span class="eyebrow-muted">Frontend + Backend</span>
           </div>
-          <div class="proof-card">
-            <strong>Custom UI</strong>
-            <span>Widget styled to match your brand</span>
-          </div>
-          <div class="proof-card">
-            <strong>API powered</strong>
-            <span>Modern AI experience for real use</span>
-          </div>
-        </div>
-      </div>
 
-      <div class="hero-right">
-        <div class="browser-mockup">
-          <div class="browser-top">
-            <div class="browser-dots">
-              <span></span><span></span><span></span>
+          <h1>
+            AI chatbots that make
+            <span>websites look smarter, feel faster,</span>
+            and convert better.
+          </h1>
+
+          <p class="hero-description">
+            I build custom AI chatbot experiences for businesses, portfolios, service websites,
+            agencies, and booking platforms. The goal is not just adding chat — it is creating
+            a premium layer that helps users faster, improves the website experience, and makes
+            the brand feel more modern.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#demo" class="btn btn-primary">Launch Live Demo</a>
+            <a href="#pricing" class="btn btn-secondary">View Pricing</a>
+          </div>
+
+          <div class="hero-info-grid">
+            <div class="hero-info-card">
+              <strong>Support flow</strong>
+              <span>Answer repeated visitor questions instantly</span>
             </div>
-            <div class="browser-bar">https://yourwebsite.com</div>
+            <div class="hero-info-card">
+              <strong>Lead capture</strong>
+              <span>Guide users to enquiry, quote, or booking action</span>
+            </div>
+            <div class="hero-info-card">
+              <strong>Custom design</strong>
+              <span>Styled to fit the tone of the website</span>
+            </div>
           </div>
+        </div>
 
-          <div class="browser-body">
-            <div class="mockup-sidebar">
-              <div class="sidebar-block"></div>
-              <div class="sidebar-block short"></div>
-              <div class="sidebar-block"></div>
+        <div class="hero-visual">
+          <div class="window window-large">
+            <div class="window-topbar">
+              <div class="traffic-lights">
+                <span class="red"></span>
+                <span class="yellow"></span>
+                <span class="green"></span>
+              </div>
+              <div class="window-address">https://yourwebsite.com</div>
             </div>
 
-            <div class="mockup-main">
-              <div class="floating-preview-card card-a">
-                <p>Agency Website</p>
-              </div>
-              <div class="floating-preview-card card-b">
-                <p>Ecommerce Store</p>
-              </div>
-              <div class="floating-preview-card card-c">
-                <p>Personal Portfolio</p>
-              </div>
+            <div class="window-body">
+              <aside class="window-sidebar">
+                <div class="sidebar-module">
+                  <div class="line lg"></div>
+                  <div class="line md"></div>
+                  <div class="line sm"></div>
+                </div>
+                <div class="sidebar-module">
+                  <div class="dots-row">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="line md"></div>
+                  <div class="line sm"></div>
+                </div>
+                <div class="sidebar-module sidebar-badge-module">
+                  <div class="small-pill">24/7</div>
+                  <div class="line md"></div>
+                  <div class="line sm"></div>
+                </div>
+              </aside>
 
-              <div class="mockup-chat">
-                <div class="mockup-chat-header">
-                  <div>
-                    <h3>AI Site Assistant</h3>
-                    <span>Online now</span>
+              <div class="window-main">
+                <div class="floating-chip-row">
+                  <span>Service questions</span>
+                  <span>Instant replies</span>
+                  <span>Lead capture</span>
+                  <span>Booking support</span>
+                </div>
+
+                <div class="window-chat-card">
+                  <div class="window-chat-header">
+                    <div class="chat-identity">
+                      <div class="ai-avatar">AI</div>
+                      <div>
+                        <h3>Website Assistant</h3>
+                        <p>Online now</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="window-chat-messages">
+                    <div class="preview-message bot-preview">
+                      Hello. How can I help you today?
+                    </div>
+                    <div class="preview-message user-preview">
+                      Can this chatbot be customised for my website?
+                    </div>
+                    <div class="preview-message bot-preview">
+                      Yes. It can be adapted for support, bookings, enquiries,
+                      services, and general website guidance.
+                    </div>
                   </div>
                 </div>
 
-                <div class="mockup-bubbles">
-                  <div class="bubble bot-bubble">Hi! Need help with pricing, services, or support?</div>
-                  <div class="bubble user-bubble">Can this chatbot be added to my website?</div>
-                  <div class="bubble bot-bubble">Yes — it can be customised for business, portfolio, ecommerce, or service websites.</div>
+                <div class="mini-use-cases">
+                  <div class="mini-case-card">
+                    <strong>Clinic</strong>
+                    <span>Booking, FAQs, services</span>
+                  </div>
+                  <div class="mini-case-card">
+                    <strong>Agency</strong>
+                    <span>Leads, contact, pricing</span>
+                  </div>
+                  <div class="mini-case-card">
+                    <strong>Portfolio</strong>
+                    <span>Projects, services, CTA</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="hero-glow-card">
-          <p>Designed to feel premium, modern, and production-ready.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="logo-strip">
-      <div>Modern UI</div>
-      <div>Free Access</div>
-      <div>AI Powered</div>
-      <div>Custom Chat Widgets</div>
-      <div>Professional Design</div>
-    </section>
-
-    <section id="services" class="section">
-      <div class="section-head">
-        <span class="section-tag">SERVICES</span>
-        <h2>What this chatbot can do for a website</h2>
-        <p>Built to improve user experience, automate support, and make websites feel more interactive and valuable.</p>
-      </div>
-
-      <div class="services-grid">
-        <article class="glass-card service-card">
-          <div class="icon-box">💬</div>
-          <h3>Instant customer support</h3>
-          <p>Answer FAQs, service questions, availability, contact information, and common requests in real time.</p>
-        </article>
-
-        <article class="glass-card service-card">
-          <div class="icon-box">⚡</div>
-          <h3>Modern website experience</h3>
-          <p>Add a premium AI layer to your website so it feels dynamic, interactive, and more advanced.</p>
-        </article>
-
-        <article class="glass-card service-card">
-          <div class="icon-box">🎯</div>
-          <h3>Lead guidance</h3>
-          <p>Help visitors understand your services and move them toward booking, contact, or purchase actions.</p>
-        </article>
-
-        <article class="glass-card service-card">
-          <div class="icon-box">🎨</div>
-          <h3>Custom branded widget</h3>
-          <p>Adapt the chatbot’s colours, shape, layout, and feel so it matches the identity of the website.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="skills" class="section">
-      <div class="section-head">
-        <span class="section-tag">SKILLS</span>
-        <h2>Built with a real full-stack workflow</h2>
-        <p>This is not just a mockup. It combines frontend design, backend logic, API usage, and UI polish.</p>
-      </div>
-
-      <div class="skills-grid">
-        <div class="skill-chip">Python</div>
-        <div class="skill-chip">Flask</div>
-        <div class="skill-chip">JavaScript</div>
-        <div class="skill-chip">HTML5</div>
-        <div class="skill-chip">CSS3</div>
-        <div class="skill-chip">OpenAI API</div>
-        <div class="skill-chip">Session Memory</div>
-        <div class="skill-chip">Chat UI Design</div>
-        <div class="skill-chip">Widget Integration</div>
-        <div class="skill-chip">Responsive Layout</div>
-      </div>
-    </section>
-
-    <section id="pricing" class="section">
-      <div class="section-head">
-        <span class="section-tag">PRICING</span>
-        <h2>Start free, then scale with custom chatbot setup</h2>
-        <p>
-          A junior-friendly pricing structure for portfolios, small businesses, agencies,
-          ecommerce stores, and service websites.
-        </p>
-      </div>
-
-      <div class="pricing-grid upgraded-pricing-grid">
-        <div class="glass-card pricing-card featured-pricing">
-          <div class="pricing-badge">BEST FOR DEMO</div>
-          <h3>Free Demo Plan</h3>
-          <div class="price-line">
-            <span class="price">€0</span>
-            <span class="price-note">for demo use</span>
+          <div class="hero-bottom-note">
+            Designed to feel premium, product-like, and intentionally crafted.
           </div>
+        </div>
+      </div>
+    </section>
 
-          <p class="pricing-intro">
-            Ideal for showing the chatbot live on a portfolio or testing the experience before requesting a custom version.
+    <section class="trust-strip">
+      <div class="container trust-strip-inner">
+        <span>Custom UI Design</span>
+        <span>AI-Powered Support</span>
+        <span>Lead Generation</span>
+        <span>Booking Workflows</span>
+        <span>Live Demo Ready</span>
+      </div>
+    </section>
+
+    <section id="services" class="content-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-tag">Services</span>
+          <h2>Built for websites that need more than static content</h2>
+          <p>
+            These chatbot systems are designed to make websites more interactive,
+            more helpful, and more valuable for the visitor.
           </p>
-
-          <ul class="pricing-list">
-            <li>Live website chatbot demo</li>
-            <li>Modern premium UI</li>
-            <li>Basic conversation memory</li>
-            <li>Frontend + backend example</li>
-            <li>Portfolio-ready presentation</li>
-          </ul>
-
-          <a href="#demo" class="btn btn-primary full-width">Try It Now</a>
         </div>
 
-        <div class="glass-card pricing-card quote-builder-card">
-          <div class="quote-topline">
-            <span class="quote-badge">CUSTOM QUOTE</span>
-            <h3>Build your chatbot package</h3>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-number">01</div>
+            <h3>Support and FAQs</h3>
             <p>
-              Choose your website needs below and get an instant estimated price.
-              The pricing is intentionally kept at a junior-friendly level.
+              Answer repeated questions about services, prices, timings, contact details,
+              availability, and general website guidance.
             </p>
-          </div>
+          </article>
 
-          <div class="quote-form-grid">
-            <div class="field-group">
-              <label for="websiteType">Website type</label>
-              <select id="websiteType">
-                <option value="0">Portfolio / Personal site</option>
-                <option value="30">Business / Agency website</option>
-                <option value="50">Ecommerce store</option>
-                <option value="40">Booking / Service website</option>
-              </select>
-            </div>
-
-            <div class="field-group">
-              <label for="pagesCount">Website size</label>
-              <select id="pagesCount">
-                <option value="0">1–3 pages</option>
-                <option value="25">4–8 pages</option>
-                <option value="45">9+ pages</option>
-              </select>
-            </div>
-
-            <div class="field-group">
-              <label for="faqCount">Knowledge / FAQ size</label>
-              <select id="faqCount">
-                <option value="0">Basic (up to 10 FAQs)</option>
-                <option value="20">Medium (10–25 FAQs)</option>
-                <option value="40">Advanced (25+ FAQs)</option>
-              </select>
-            </div>
-
-            <div class="field-group">
-              <label for="designLevel">Chatbot design level</label>
-              <select id="designLevel">
-                <option value="0">Standard branding</option>
-                <option value="25">Premium styling</option>
-                <option value="50">Highly customised UI</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="checkbox-grid">
-            <label class="check-item">
-              <input type="checkbox" class="quote-addon" value="20" data-label="Lead capture form">
-              <span>Lead capture form</span>
-            </label>
-
-            <label class="check-item">
-              <input type="checkbox" class="quote-addon" value="25" data-label="Multi-language support">
-              <span>Multi-language support</span>
-            </label>
-
-            <label class="check-item">
-              <input type="checkbox" class="quote-addon" value="35" data-label="Product/service recommendations">
-              <span>Product / service recommendations</span>
-            </label>
-
-            <label class="check-item">
-              <input type="checkbox" class="quote-addon" value="30" data-label="Contact form integration">
-              <span>Contact form integration</span>
-            </label>
-
-            <label class="check-item">
-              <input type="checkbox" class="quote-addon" value="50" data-label="Booking or enquiry workflow">
-              <span>Booking / enquiry workflow</span>
-            </label>
-
-            <label class="check-item">
-              <input type="checkbox" class="quote-addon" value="40" data-label="Priority delivery">
-              <span>Priority delivery</span>
-            </label>
-          </div>
-
-          <div class="quote-notes field-group">
-            <label for="projectNotes">Project notes</label>
-            <textarea
-              id="projectNotes"
-              rows="4"
-              placeholder="Example: I need a chatbot for a dental clinic website with pricing questions, booking help, and bilingual support."
-            ></textarea>
-          </div>
-
-          <div class="quote-result-panel">
-            <div class="quote-result-row">
-              <span>Estimated junior-friendly project price</span>
-              <strong id="estimatedPrice">€120</strong>
-            </div>
-
-            <div class="quote-result-row small-row">
-              <span>Recommended package</span>
-              <strong id="recommendedPackage">Starter Custom</strong>
-            </div>
-
-            <p id="quoteSummary" class="quote-summary-text">
-              Great for a simple website chatbot with clean design and basic setup.
+          <article class="service-card">
+            <div class="service-number">02</div>
+            <h3>Lead capture and enquiries</h3>
+            <p>
+              Guide visitors to quote requests, contact forms, or consultation actions
+              in a more structured and interactive way.
             </p>
-          </div>
+          </article>
 
-          <div class="quote-actions">
-            <button id="calculateQuoteBtn" class="btn btn-primary" type="button">
-              Update Estimate
-            </button>
+          <article class="service-card">
+            <div class="service-number">03</div>
+            <h3>Booking and appointment support</h3>
+            <p>
+              Useful for clinics, salons, agencies, consultants, and service businesses
+              that handle bookings or appointment flows.
+            </p>
+          </article>
 
-            <button id="sendQuoteBtn" class="btn btn-secondary" type="button">
-              Send Request
-            </button>
-          </div>
+          <article class="service-card">
+            <div class="service-number">04</div>
+            <h3>Brand-matched interface</h3>
+            <p>
+              The chatbot can be styled to feel like part of the site instead of a generic
+              widget dropped onto the page.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="quote-process" class="section">
-      <div class="section-head">
-        <span class="section-tag">HOW CUSTOM SETUP WORKS</span>
-        <h2>A more professional service flow</h2>
-        <p>
-          This makes the website feel more serious and shows clients that the work is structured,
-          not random.
-        </p>
-      </div>
-
-      <div class="feature-panels">
-        <div class="feature-panel glass-card">
-          <h3>1. Requirement collection</h3>
+    <section id="showcase" class="content-section showcase-section">
+      <div class="container">
+        <div class="section-heading center-heading">
+          <span class="section-tag">Showcase</span>
+          <h2>A fuller, more polished website presentation</h2>
           <p>
-            The client chooses the type of website, features, chatbot styling level,
-            and any special needs for their business.
+            Instead of empty blocks, these examples show how the chatbot fits into real website scenarios.
           </p>
         </div>
 
-        <div class="feature-panel glass-card">
-          <h3>2. Price estimation</h3>
-          <p>
-            A junior-level estimate is shown instantly so the client understands the budget range
-            before moving forward.
-          </p>
-        </div>
-
-        <div class="feature-panel glass-card">
-          <h3>3. Custom implementation</h3>
-          <p>
-            The chatbot can then be tailored for support, lead generation, bookings,
-            ecommerce help, or business-specific questions.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <span class="section-tag">WHY IT STANDS OUT</span>
-        <h2>Made to look expensive, smooth, and high-end</h2>
-      </div>
-
-      <div class="feature-panels">
-        <div class="feature-panel glass-card">
-          <h3>Premium visuals</h3>
-          <p>Layered gradients, glow effects, glass cards, and strong spacing create a more luxury SaaS feel.</p>
-        </div>
-        <div class="feature-panel glass-card">
-          <h3>Real usability</h3>
-          <p>The chatbot is not just decorative — it actually works and demonstrates real interaction and API usage.</p>
-        </div>
-        <div class="feature-panel glass-card">
-          <h3>Portfolio impact</h3>
-          <p>This kind of presentation makes the project feel more serious on GitHub and in interviews.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="demo" class="section demo-section">
-      <div class="section-head center">
-        <span class="section-tag">LIVE DEMO</span>
-        <h2>Try the chatbot yourself</h2>
-        <p>Ask about pricing, services, features, or how this could be added to a website.</p>
-      </div>
-
-      <div class="chat-shell">
-        <div class="chat-widget">
-          <div class="chat-header">
-            <div class="chat-title-wrap">
-              <div class="chat-avatar">AI</div>
-              <div>
-                <h2>Website AI Assistant</h2>
-                <span>Fast replies • Demo active</span>
+        <div class="showcase-grid">
+          <article class="showcase-card">
+            <div class="showcase-visual showcase-blue">
+              <div class="mock-app-window">
+                <div class="mock-window-bar">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="mock-window-title"></div>
+                <div class="mock-window-line"></div>
+                <div class="mock-window-line short"></div>
+                <div class="mock-window-pill">Portfolio chatbot</div>
               </div>
             </div>
-            <button id="resetBtn">Reset</button>
+            <div class="showcase-copy">
+              <h3>Personal portfolio website</h3>
+              <p>
+                Let visitors ask about services, projects, experience, and how to contact you
+                without searching through the whole page.
+              </p>
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <div class="showcase-visual showcase-green">
+              <div class="mock-app-window">
+                <div class="mock-window-bar">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="mock-window-title"></div>
+                <div class="mock-window-line"></div>
+                <div class="mock-window-line short"></div>
+                <div class="mock-window-pill">Business assistant</div>
+              </div>
+            </div>
+            <div class="showcase-copy">
+              <h3>Business or agency website</h3>
+              <p>
+                Help visitors understand services, prices, process, and next steps before they
+                leave the site.
+              </p>
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <div class="showcase-visual showcase-violet">
+              <div class="mock-app-window">
+                <div class="mock-window-bar">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="mock-window-title"></div>
+                <div class="mock-window-line"></div>
+                <div class="mock-window-line short"></div>
+                <div class="mock-window-pill">Booking flow</div>
+              </div>
+            </div>
+            <div class="showcase-copy">
+              <h3>Booking and service websites</h3>
+              <p>
+                Make appointment-related questions easier to handle and reduce repetitive
+                communication.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="moving-band">
+          <div class="moving-track">
+            <div class="moving-card"><span>AI Support</span><p>Answers client questions instantly</p></div>
+            <div class="moving-card"><span>Lead Flow</span><p>Helps visitors send better enquiries</p></div>
+            <div class="moving-card"><span>Booking Help</span><p>Useful for appointment-based websites</p></div>
+            <div class="moving-card"><span>Custom Widget</span><p>Styled to match the website layout</p></div>
+            <div class="moving-card"><span>Business FAQ</span><p>Good for services, pricing, and information</p></div>
+            <div class="moving-card"><span>Portfolio AI</span><p>Makes personal sites more interactive</p></div>
+            <div class="moving-card"><span>AI Support</span><p>Answers client questions instantly</p></div>
+            <div class="moving-card"><span>Lead Flow</span><p>Helps visitors send better enquiries</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="content-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-tag">Process</span>
+          <h2>A clearer and more professional workflow</h2>
+          <p>
+            A simple structure makes the service feel more serious and easier for clients to understand.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card">
+            <div class="process-step">1</div>
+            <h3>Website review</h3>
+            <p>
+              First the website type, content, services, and user journey are reviewed
+              so the chatbot actually fits the brand and flow.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-step">2</div>
+            <h3>Feature definition</h3>
+            <p>
+              The chatbot role is defined: support, lead capture, FAQ, bookings,
+              service explanation, or a mix of those.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-step">3</div>
+            <h3>Design and integration</h3>
+            <p>
+              The interface is styled to fit the site and the chatbot behaviour is
+              adjusted for the right type of visitor questions.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-tag">Tech Stack</span>
+          <h2>Real development, not just a visual concept</h2>
+          <p>
+            This project combines website UI, backend chatbot logic, API integration,
+            session memory, and deployment workflow.
+          </p>
+        </div>
+
+        <div class="skill-row">
+          <span>Python</span>
+          <span>Flask</span>
+          <span>JavaScript</span>
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>OpenAI API</span>
+          <span>Session Memory</span>
+          <span>Responsive Design</span>
+          <span>Deployment</span>
+          <span>UI Design</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="content-section pricing-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-tag">Pricing</span>
+          <h2>Simple pricing for smaller and local projects</h2>
+          <p>
+            Clear pricing for local businesses, portfolios, personal websites, and compact service projects.
+          </p>
+        </div>
+
+        <div class="pricing-layout">
+          <div class="pricing-card">
+            <div class="pricing-badge">Free Demo</div>
+            <h3>Demo Version</h3>
+            <div class="price-row">
+              <strong>€0</strong>
+              <span>for demo use</span>
+            </div>
+
+            <p class="pricing-copy">
+              Best for testing the interface, seeing the concept live, and understanding how
+              the chatbot could fit into a website.
+            </p>
+
+            <ul class="pricing-list">
+              <li>Live demo chatbot</li>
+              <li>Premium landing page</li>
+              <li>Basic memory flow</li>
+              <li>Frontend + backend example</li>
+              <li>Professional presentation</li>
+            </ul>
+
+            <a href="#demo" class="btn btn-primary full-width-btn">Open Demo</a>
           </div>
 
-          <div id="chatBox" class="chat-box">
-            <div class="message bot">
-              Hello! I’m a demo AI chatbot for websites. Ask me about services, pricing, features, or website integration.
+          <div class="quote-builder-card">
+            <div class="quote-header">
+              <span class="quote-badge">Custom Quote</span>
+              <h3>Build your chatbot package</h3>
+              <p>
+                Choose your requirements below and get an instant estimate based on a junior-friendly local market range.
+              </p>
+            </div>
+
+            <div class="quote-grid">
+              <div class="field">
+                <label for="websiteType">Website type</label>
+                <select id="websiteType">
+                  <option value="0">Portfolio / Personal site</option>
+                  <option value="15">Business / Agency website</option>
+                  <option value="25">Ecommerce store</option>
+                  <option value="20">Booking / Service website</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="pagesCount">Website size</label>
+                <select id="pagesCount">
+                  <option value="0">1–3 pages</option>
+                  <option value="10">4–8 pages</option>
+                  <option value="20">9+ pages</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="faqCount">Knowledge / FAQ size</label>
+                <select id="faqCount">
+                  <option value="0">Basic (up to 10 FAQs)</option>
+                  <option value="10">Medium (10–25 FAQs)</option>
+                  <option value="20">Advanced (25+ FAQs)</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="designLevel">Chatbot design level</label>
+                <select id="designLevel">
+                  <option value="0">Standard branding</option>
+                  <option value="15">Premium styling</option>
+                  <option value="30">Highly customised UI</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="addon-grid">
+              <label class="addon-item">
+                <input type="checkbox" class="quote-addon" value="10" data-label="Lead capture form">
+                <span>Lead capture form</span>
+              </label>
+
+              <label class="addon-item">
+                <input type="checkbox" class="quote-addon" value="15" data-label="Multi-language support">
+                <span>Multi-language support</span>
+              </label>
+
+              <label class="addon-item">
+                <input type="checkbox" class="quote-addon" value="20" data-label="Product or service recommendations">
+                <span>Product / service recommendations</span>
+              </label>
+
+              <label class="addon-item">
+                <input type="checkbox" class="quote-addon" value="15" data-label="Contact form integration">
+                <span>Contact form integration</span>
+              </label>
+
+              <label class="addon-item">
+                <input type="checkbox" class="quote-addon" value="25" data-label="Booking or enquiry workflow">
+                <span>Booking / enquiry workflow</span>
+              </label>
+
+              <label class="addon-item">
+                <input type="checkbox" class="quote-addon" value="20" data-label="Priority delivery">
+                <span>Priority delivery</span>
+              </label>
+            </div>
+
+            <div class="field full-field">
+              <label for="projectNotes">Project notes</label>
+              <textarea
+                id="projectNotes"
+                rows="4"
+                placeholder="Example: I need a chatbot for a clinic website with bilingual support, booking help, and service questions."
+              ></textarea>
+            </div>
+
+            <div class="quote-result-box">
+              <div class="quote-result-line">
+                <span>Estimated project price</span>
+                <strong id="estimatedPrice">€60</strong>
+              </div>
+
+              <div class="quote-result-line small-line">
+                <span>Recommended package</span>
+                <strong id="recommendedPackage">Starter</strong>
+              </div>
+
+              <p id="quoteSummary" class="quote-summary">
+                Good for a simple website chatbot with clean design and essential setup.
+              </p>
+            </div>
+
+            <div class="quote-actions">
+              <button id="calculateQuoteBtn" class="btn btn-primary" type="button">Update Estimate</button>
+              <button id="sendQuoteBtn" class="btn btn-secondary" type="button">Send Request</button>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="chat-input-area">
-            <input type="text" id="userInput" placeholder="Type your message..." />
-            <button id="sendBtn">Send</button>
+    <section id="demo" class="content-section">
+      <div class="container">
+        <div class="section-heading center-heading">
+          <span class="section-tag">Live Demo</span>
+          <h2>Try the chatbot</h2>
+          <p>
+            Ask about pricing, setup, services, or how the chatbot could work on a website.
+          </p>
+        </div>
+
+        <div class="live-chat-shell">
+          <div class="live-chat-card">
+            <div class="live-chat-top">
+              <div class="live-chat-title">
+                <div class="live-avatar">AI</div>
+                <div>
+                  <h3>Website Assistant</h3>
+                  <p>Demo active</p>
+                </div>
+              </div>
+
+              <button id="resetBtn" class="reset-button">Reset</button>
+            </div>
+
+            <div id="chatBox" class="live-chat-messages">
+              <div class="message bot">
+                Hello. I’m a demo website chatbot. Ask me about services, pricing, features, or website integration.
+              </div>
+            </div>
+
+            <div class="live-chat-input-row">
+              <input type="text" id="userInput" placeholder="Type your message..." />
+              <button id="sendBtn">Send</button>
+            </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="content-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-tag">FAQ</span>
+          <h2>Common questions</h2>
+        </div>
+
+        <div class="faq-grid">
+          <article class="faq-card">
+            <h3>Can this chatbot match my website design?</h3>
+            <p>
+              Yes. The colours, spacing, widget style, and tone can be adjusted so it fits more naturally into your website.
+            </p>
+          </article>
+
+          <article class="faq-card">
+            <h3>Can it work for local businesses?</h3>
+            <p>
+              Yes. It is especially useful for smaller businesses, clinics, agencies, portfolios, and service websites.
+            </p>
+          </article>
+
+          <article class="faq-card">
+            <h3>Can it support multiple languages?</h3>
+            <p>
+              Yes. Multi-language support can be added as part of the custom version.
+            </p>
+          </article>
+
+          <article class="faq-card">
+            <h3>Is the quote builder an exact final price?</h3>
+            <p>
+              No. It shows a practical estimate. Final pricing depends on the exact customisation and integration needed.
+            </p>
+          </article>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>Built by Endrit Nezir • AI chatbot demo for websites • Professional frontend + backend integration</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <h3>EndritAI</h3>
+        <p>Custom AI chatbot integration for websites.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#demo">Demo</a>
+      </div>
+    </div>
   </footer>
 
   <script src="{{ url_for('static', filename='script.js') }}"></script>

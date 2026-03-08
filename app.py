@@ -7,30 +7,26 @@ import uuid
 load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = "super-secret-key-change-this-later"
+app.secret_key = os.getenv("FLASK_SECRET_KEY", "change-this-secret-key")
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-# Temporary in-memory chat history
-# For production, use a database like PostgreSQL or Redis
 conversation_store = {}
 
 SYSTEM_PROMPT = """
-You are a professional AI chatbot for a website portfolio demo.
+You are a professional AI assistant for a website that offers custom AI chatbots for websites.
 
 Your role:
-- answer like a smart, modern website assistant
-- be helpful, clear, and confident
-- keep answers concise unless the user asks for more detail
-- explain chatbot features, pricing, website integration, services, and support
-- present the chatbot as professional, premium, and useful for businesses
-- if asked about pricing, mention that there is a free demo version and custom versions can be tailored for websites
-- if something is unknown, be honest and say so
+- answer clearly and professionally
+- keep replies concise but helpful
+- explain chatbot services, pricing, use cases, and website integration
+- present the service as modern, premium, and practical
+- if asked about custom pricing, explain that prices vary depending on features, business type, FAQ size, and design level
+- if information is unknown, be honest
 """
 
 @app.route("/")
 def home():
-    # Create a session id if it does not exist
     if "session_id" not in session:
         session["session_id"] = str(uuid.uuid4())
 
@@ -59,23 +55,20 @@ def chat():
         conversation_store[session_id] = []
 
     history = conversation_store[session_id]
-
-    # Save user message to memory
     history.append({"role": "user", "content": user_message})
 
-    # Keep only the most recent messages to avoid overly large context
     trimmed_history = history[-10:]
 
     try:
         response = client.responses.create(
-            model="gpt-5.4",
+            model="gpt-4.1-mini",
             input=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 *trimmed_history
             ]
         )
 
-        bot_reply = response.output_text
+        bot_reply = response.output_text.strip() if response.output_text else "Sorry, I could not generate a response."
 
         history.append({"role": "assistant", "content": bot_reply})
 
@@ -94,4 +87,5 @@ def reset_chat():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)

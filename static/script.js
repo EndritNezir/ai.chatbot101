@@ -61,15 +61,11 @@ if (resetBtn) {
 
     chatBox.innerHTML = "";
     appendMessage(
-      "Hello! I’m a demo AI chatbot for websites. Ask me about services, pricing, features, or website integration.",
+      "Hello. I’m a demo website chatbot. Ask me about services, pricing, features, or website integration.",
       "bot"
     );
   });
 }
-
-/* =========================
-   CUSTOM QUOTE BUILDER
-========================= */
 
 const websiteType = document.getElementById("websiteType");
 const pagesCount = document.getElementById("pagesCount");
@@ -100,7 +96,7 @@ function getSelectedAddons() {
 function calculateQuote() {
   if (!websiteType || !pagesCount || !faqCount || !designLevel) return null;
 
-  const basePrice = 120;
+  const basePrice = 60;
 
   const total =
     basePrice +
@@ -110,15 +106,15 @@ function calculateQuote() {
     Number(designLevel.value) +
     getSelectedAddons().reduce((sum, addon) => sum + addon.value, 0);
 
-  let packageName = "Starter Custom";
-  let summaryText = "Great for a simple website chatbot with clean design and basic setup.";
+  let packageName = "Starter";
+  let summaryText = "Good for a simple website chatbot with clean design and essential setup.";
 
-  if (total >= 220 && total < 320) {
-    packageName = "Business Custom";
-    summaryText = "Best for a more polished business chatbot with stronger styling and more useful website features.";
-  } else if (total >= 320) {
-    packageName = "Advanced Custom";
-    summaryText = "Best for a more customised chatbot setup with richer functionality, more content handling, and a stronger business workflow.";
+  if (total >= 100 && total < 160) {
+    packageName = "Business";
+    summaryText = "Best for a polished small-business chatbot with improved styling and more practical features.";
+  } else if (total >= 160) {
+    packageName = "Advanced";
+    summaryText = "Best for a more customised chatbot setup with richer functionality, more content, and a stronger workflow.";
   }
 
   if (estimatedPrice) estimatedPrice.textContent = `€${total}`;
@@ -183,8 +179,9 @@ Please contact me with the next steps.
 `
     );
 
-    window.location.href = `mailto:endrit.nezir30@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:endrit.neir30@gmail.com?subject=${subject}&body=${body}`;
   });
 }
 
 calculateQuote();
+    
