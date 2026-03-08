@@ -39,24 +39,152 @@ async function sendMessage() {
   }
 }
 
-sendBtn.addEventListener("click", sendMessage);
+if (sendBtn) {
+  sendBtn.addEventListener("click", sendMessage);
+}
 
-userInput.addEventListener("keypress", function (e) {
-  if (e.key === "Enter") {
-    sendMessage();
+if (userInput) {
+  userInput.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  });
+}
+
+if (resetBtn) {
+  resetBtn.addEventListener("click", async () => {
+    try {
+      await fetch("/reset", { method: "POST" });
+    } catch (error) {
+      console.log("Reset failed");
+    }
+
+    chatBox.innerHTML = "";
+    appendMessage(
+      "Hello! I’m a demo AI chatbot for websites. Ask me about services, pricing, features, or website integration.",
+      "bot"
+    );
+  });
+}
+
+/* =========================
+   CUSTOM QUOTE BUILDER
+========================= */
+
+const websiteType = document.getElementById("websiteType");
+const pagesCount = document.getElementById("pagesCount");
+const faqCount = document.getElementById("faqCount");
+const designLevel = document.getElementById("designLevel");
+const projectNotes = document.getElementById("projectNotes");
+const addonCheckboxes = document.querySelectorAll(".quote-addon");
+
+const estimatedPrice = document.getElementById("estimatedPrice");
+const recommendedPackage = document.getElementById("recommendedPackage");
+const quoteSummary = document.getElementById("quoteSummary");
+const calculateQuoteBtn = document.getElementById("calculateQuoteBtn");
+const sendQuoteBtn = document.getElementById("sendQuoteBtn");
+
+function getSelectedAddons() {
+  const selected = [];
+  addonCheckboxes.forEach((checkbox) => {
+    if (checkbox.checked) {
+      selected.push({
+        label: checkbox.dataset.label,
+        value: Number(checkbox.value)
+      });
+    }
+  });
+  return selected;
+}
+
+function calculateQuote() {
+  if (!websiteType || !pagesCount || !faqCount || !designLevel) return null;
+
+  const basePrice = 120;
+
+  const total =
+    basePrice +
+    Number(websiteType.value) +
+    Number(pagesCount.value) +
+    Number(faqCount.value) +
+    Number(designLevel.value) +
+    getSelectedAddons().reduce((sum, addon) => sum + addon.value, 0);
+
+  let packageName = "Starter Custom";
+  let summaryText = "Great for a simple website chatbot with clean design and basic setup.";
+
+  if (total >= 220 && total < 320) {
+    packageName = "Business Custom";
+    summaryText = "Best for a more polished business chatbot with stronger styling and more useful website features.";
+  } else if (total >= 320) {
+    packageName = "Advanced Custom";
+    summaryText = "Best for a more customised chatbot setup with richer functionality, more content handling, and a stronger business workflow.";
   }
+
+  if (estimatedPrice) estimatedPrice.textContent = `€${total}`;
+  if (recommendedPackage) recommendedPackage.textContent = packageName;
+  if (quoteSummary) quoteSummary.textContent = summaryText;
+
+  return {
+    total,
+    packageName,
+    summaryText,
+    addons: getSelectedAddons()
+  };
+}
+
+if (calculateQuoteBtn) {
+  calculateQuoteBtn.addEventListener("click", calculateQuote);
+}
+
+[websiteType, pagesCount, faqCount, designLevel].forEach((field) => {
+  if (field) field.addEventListener("change", calculateQuote);
 });
 
-resetBtn.addEventListener("click", async () => {
-  try {
-    await fetch("/reset", { method: "POST" });
-  } catch (error) {
-    console.log("Reset failed");
-  }
-
-  chatBox.innerHTML = "";
-  appendMessage(
-    "Hello! I’m a demo AI chatbot for websites. Ask me about services, pricing, features, or website integration.",
-    "bot"
-  );
+addonCheckboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", calculateQuote);
 });
+
+if (sendQuoteBtn) {
+  sendQuoteBtn.addEventListener("click", () => {
+    const quote = calculateQuote();
+    if (!quote) return;
+
+    const addonText = quote.addons.length
+      ? quote.addons.map((addon) => `- ${addon.label}`).join("\n")
+      : "- No extra add-ons selected";
+
+    const notesText = projectNotes && projectNotes.value.trim()
+      ? projectNotes.value.trim()
+      : "No extra notes provided.";
+
+    const subject = encodeURIComponent("Custom AI Chatbot Request");
+    const body = encodeURIComponent(
+`Hello Endrit,
+
+I would like to request a custom AI chatbot for my website.
+
+Estimated package: ${quote.packageName}
+Estimated price: €${quote.total}
+
+Selected requirements:
+- Website type: ${websiteType.options[websiteType.selectedIndex].text}
+- Website size: ${pagesCount.options[pagesCount.selectedIndex].text}
+- FAQ size: ${faqCount.options[faqCount.selectedIndex].text}
+- Design level: ${designLevel.options[designLevel.selectedIndex].text}
+
+Add-ons:
+${addonText}
+
+Project notes:
+${notesText}
+
+Please contact me with the next steps.
+`
+    );
+
+    window.location.href = `mailto:endrit.nezir30@gmail.com?subject=${subject}&body=${body}`;
+  });
+}
+
+calculateQuote();
