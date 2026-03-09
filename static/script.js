@@ -218,7 +218,7 @@ Please contact me with the next steps.
 `
     );
 
-    window.location.href = `mailto:endrit.nezir30@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@endritai.live?subject=${subject}&body=${body}`;
   });
 }
 
